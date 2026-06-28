@@ -1,0 +1,2 @@
+org.springframework.context.ApplicationContextInitializer=\
+com.ncapas.lab3.config.DotenvInitializer
