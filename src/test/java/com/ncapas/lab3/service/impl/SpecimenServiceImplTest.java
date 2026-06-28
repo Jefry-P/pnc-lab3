@@ -53,7 +53,9 @@ class SpecimenServiceImplTest {
         specimenResponse = SpecimenResponse.builder()
                 .id(specimenId)
                 .name("Ancient Arrow")
-                .description("An arrow tipped with ancient technology")
+                .region("Hyrule")
+                .dangerLevel(5)
+                .isFriendly(false)
                 .build();
     }
 

@@ -5,12 +5,12 @@ WORKDIR /app
 # Copiamos lo necesario para instalar las dependencias
 COPY .mv[n]/ .mvn/
 COPY mvnw pom.xml ./
-RUN ./mvnw dependency:go-offline -B
+RUN chmod +x mvnw && ./mvnw dependency:go-offline -B
 
 # Copiaos el codigo fuente y se compila :D
 COPY src ./src
 # Nos saltamos los test ya que de eso se encarga CI :D
-RUN ./mvnw clean package -DskipTests -B
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests -B
 
 # ---------- Etapa 2: runtime ----------
 FROM eclipse-temurin:21-jre-alpine
